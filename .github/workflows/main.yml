@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Adjust the branch name if needed
+permissions:
+  contents: write
 
 jobs:
   push-to-rickthestig:
@@ -11,7 +13,9 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_PAT }}
 
     - name: Push to rickthestig
       run: |
@@ -19,5 +23,3 @@ jobs:
         git config --global user.name "Github Actions"
         git remote add rickthestig https://github.com/rickthestig/website.git  # Replace repository-name with your actual repository name
         git push rickthestig main  # Adjust the branch name if needed
-      env:
-        PAT: ${{ secrets.GH_PAT }}
