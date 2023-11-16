@@ -22,4 +22,5 @@ jobs:
         git config --global user.email "github-actions@example.com"
         git config --global user.name "Github Actions"
         git remote add rickthestig https://github.com/rickthestig/Website.git  # Replace repository-name with your actual repository name
+        git pull rickthestig main
         git push rickthestig main  # Adjust the branch name if needed
