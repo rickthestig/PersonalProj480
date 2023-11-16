@@ -1,20 +1,21 @@
-name: Push to another repository
+name: Push to rickthestig
 
 on:
   push:
     branches:
-      - main
+      - main  # Adjust the branch name if needed
 
 jobs:
-  push:
+  push-to-rickthestig:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          repository: <username>/<repository>
-          ref: <branch>
-      - uses: actions/push@v2
-        with:
-          repository: <username>/<repository>
-          branch: <branch>
 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Push to rickthestig
+      run: |
+        git config --global user.email "github-actions@example.com"
+        git config --global user.name "GitHub Actions"
+        git remote add rickthestig https://github.com/rickthestig/rickthestig.github.io.git  # Replace repository-name with your actual repository name
+        git push rickthestig main  # Adjust the branch name if needed
