@@ -15,7 +15,9 @@ jobs:
 
     - name: Push to rickthestig
       run: |
-        git config --global user.email "erekg13@gmail.com"
-        git config --global user.name "Erek G"
+        git config --global user.email "github-actions@example.com"
+        git config --global user.name "Github Actions"
         git remote add rickthestig https://github.com/rickthestig/rickthestig.github.io.git  # Replace repository-name with your actual repository name
         git push rickthestig main  # Adjust the branch name if needed
+      env:
+        PAT: ${{ secrets.GH_PAT }}
