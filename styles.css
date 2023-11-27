@@ -41,10 +41,10 @@ body {
 
 @keyframes fall {
     0% {
-      transform: translateY(-100%);
+      transform: translateY(-1500%);
     }
     100% {
-      transform: translateY(100%);
+      transform: translateY(1500%);
     }
   }
   
@@ -55,6 +55,6 @@ body {
     background-color: gold;
     position: absolute;
     top: 10;
-    animation: fall 0.5s linear forwards;
+    animation: fall 1s linear forwards;
   }
   
