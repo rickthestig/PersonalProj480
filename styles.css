@@ -1,30 +1,30 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    margin-top: 50px;
-  }
-  
-  .jar-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-  
-  .jar {
-    width: 150px;
-    height: 250px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.jar-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.jar {
+  width: 50px;
+  height: 100px;
+  margin-right: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
   
   .coins {
     width: 100%;
