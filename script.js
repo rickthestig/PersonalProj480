@@ -1,5 +1,6 @@
 let money = 0;
 const jarValues = [100, 1000, 10000, 100000, 1000000];
+let canUseSecondSet = false;
 
 const moneyDisplay = document.getElementById('money');
 const jars = document.querySelectorAll('.jar');
@@ -41,7 +42,7 @@ upgrade.forEach((button, index) => {
         moneyDisplay.textContent = money;
       }
     }
-    if(index === 1) {
+    if(index === 1 && canUseSecondSet) {
       if(money >= incomeMultiplierCost2) {
         money -= incomeMultiplierCost2;
         incomeMultiplierCost2 *= 2;
@@ -54,6 +55,18 @@ upgrade.forEach((button, index) => {
       }
     }
   });
+});
+// Unlock button functionality
+const unlockButton = document.getElementById('unlockButton');
+unlockButton.addEventListener('click', () => {
+  if (!canUseSecondSet && money >= 100) {
+    // Unlock the second set for 100 money
+    money -= 100;
+    moneyDisplay.textContent = money;
+    canUseSecondSet = true;
+    document.getElementById('item2').removeAttribute('disabled');
+    document.getElementById('upgrade2').removeAttribute('disabled');
+  }
 });
 
 clickButton.forEach((button, index) => {
@@ -88,11 +101,6 @@ clickButton.forEach((button, index) => {
 
       // Update jar's visual filling
       coinsDisplay.style.height = percentageFilled + '%';
-
-      //if(jarMoney === jarValue) {
-        // Jar is full
-        //coinsDisplay.style.height = '0%';
-      //}
 
       // Remove the coin after the animation ends
       setTimeout(() => {

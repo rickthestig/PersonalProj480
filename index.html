@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Coin Jar</title>
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Your custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-light">
@@ -21,12 +19,12 @@
         <p>Upgrade Multiplier: <span id="upgradeMultiplier">1</span></p>
       </div>
       <div class="col-md-6">
-        <button id="item2" class="btn btn-primary mr-2 clickButton">Make Money</button>
-        <button id="upgrade2" class="btn btn-success upgradeButton">Upgrade</button>
+        <button id="item2" class="btn btn-primary mr-2 clickButton" disabled>Make Money</button>
+        <button id="upgrade2" class="btn btn-success upgradeButton" disabled>Upgrade</button>
+        <button id="unlockButton" class="btn btn-info">Unlock Second Set</button>
         <p>Upgrade Cost 2: $<span id="upgradeCost2">100</span></p>
         <p>Upgrade Level 2: <span id="upgradeLevel2">1</span></p>
         <p>Upgrade Multiplier 2: <span id="upgradeMultiplier2">1</span></p>
-        <!-- Additional elements can be placed here -->
       </div>
     </div>
 
@@ -49,7 +47,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
 </body>
