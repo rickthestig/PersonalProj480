@@ -68,9 +68,9 @@ unlockButton.addEventListener('click', () => {
     document.getElementById('upgrade2').disabled = false;
   }
 });
-if(money >= 1000000) {
-  alert("You win!");
-  }
+
+
+//add functions for increasing income after press of button
 clickButton.forEach((button, index) => {
   button.addEventListener('click', () => {
     if(index === 0) {
@@ -81,6 +81,34 @@ clickButton.forEach((button, index) => {
       money += income2 * incomeMultiplier2;
       moneyDisplay.textContent = money;
     }
+
+    if (money >= 1000000 && !document.body.classList.contains('raining-coins')) {
+        alert('Congratulations! You have reached 1 million money!');
+        // Trigger raining coins effect
+        document.body.classList.add('raining-coins');
+      
+        const createCoin = () => {
+          const coin = document.createElement('div');
+          coin.classList.add('coin');
+          const randomHorizontalPos = Math.random() * (document.body.clientWidth - 20);
+          coin.style.left = `${randomHorizontalPos}px`;
+          document.body.appendChild(coin);
+          coin.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+          // Remove the coin after animation ends
+          setTimeout(() => {
+            coin.remove();
+          }, 3000); // Set timeout to match animation duration (3s)
+        };
+      
+        // Create new coins at intervals to simulate raining effect
+        const rainingInterval = setInterval(createCoin, 50); // Interval between creating new coins (100ms)
+      
+        // Stop the raining effect after a certain duration
+        setTimeout(() => {
+          clearInterval(rainingInterval); // Clear the interval
+          document.body.classList.remove('raining-coins'); // Remove raining-coins class
+        }, 5000);
+      }
 
     jars.forEach((jar, index) => {
       const coinsDisplay = jar.querySelector('.coins');

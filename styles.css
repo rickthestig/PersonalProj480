@@ -57,4 +57,7 @@ body {
     top: 10;
     animation: fall 1s linear forwards;
   }
-  
+  .raining-coins .coin {
+    animation-duration: 0.5s;
+    animation-delay: calc(var(--coin-index) * 0.1s);
+}
