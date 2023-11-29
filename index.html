@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Coin Jar</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Your custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="mb-4">Coin Jar</h1>
     <p>Money: $<span id="money">0</span></p>
-    <button id="item1" class="clickButton">Make Money</button>
-    <button id="upgrade1" class="upgradeButton">Upgrade</button>
-    <button id="item2" class="clickButton">Make Money</button>
-    <button id="upgrade2" class="upgradeButton">Upgrade</button>
-  </div>
-  <p>Upgrade Cost: $<span id="upgradeCost">10</span></p>
-  <p>Upgrade Level: <span id="upgradeLevel">1</span></p>
-  <p>Upgrade Multiplier: <span id="upgradeMultiplier">1</span></p>
-  <p>upgrade Cost 2: $<span id="upgradeCost2">100</span></p>
-  <p>Upgrade Level 2: <span id="upgradeLevel2">1</span></p>
-  <p>Upgrade Multiplier 2: <span id="upgradeMultiplier2">1</span></p>
-  <div class="jar-container">
-    <div class="jar" id="jar1">
-      <div class="coins" id="coins1"></div>
+    <div class="row">
+      <div class="col-md-6">
+        <button id="item1" class="btn btn-primary mr-2 clickButton">Make Money</button>
+        <button id="upgrade1" class="btn btn-success upgradeButton">Upgrade</button>
+        <p>Upgrade Cost: $<span id="upgradeCost">10</span></p>
+        <p>Upgrade Level: <span id="upgradeLevel">1</span></p>
+        <p>Upgrade Multiplier: <span id="upgradeMultiplier">1</span></p>
+      </div>
+      <div class="col-md-6">
+        <button id="item2" class="btn btn-primary mr-2 clickButton">Make Money</button>
+        <button id="upgrade2" class="btn btn-success upgradeButton">Upgrade</button>
+        <p>Upgrade Cost 2: $<span id="upgradeCost2">100</span></p>
+        <p>Upgrade Level 2: <span id="upgradeLevel2">1</span></p>
+        <p>Upgrade Multiplier 2: <span id="upgradeMultiplier2">1</span></p>
+        <!-- Additional elements can be placed here -->
+      </div>
     </div>
-    <div class="jar" id="jar2">
-      <div class="coins" id="coins2"></div>
-    </div>
-    <div class="jar" id="jar3">
-      <div class="coins" id="coins3"></div>
-    </div>
-    <div class="jar" id="jar4">
-      <div class="coins" id="coins4"></div>
-    </div>
-    <div class="jar" id="jar5">
-      <div class="coins" id="coins5"></div>
+
+    <div class="jar-container mt-4">
+      <div class="jar" id="jar1">
+        <div class="coins" id="coins1"></div>
+      </div>
+      <div class="jar" id="jar2">
+        <div class="coins" id="coins2"></div>
+      </div>
+      <div class="jar" id="jar3">
+        <div class="coins" id="coins3"></div>
+      </div>
+      <div class="jar" id="jar4">
+        <div class="coins" id="coins4"></div>
+      </div>
+      <div class="jar" id="jar5">
+        <div class="coins" id="coins5"></div>
+      </div>
     </div>
   </div>
 
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
