@@ -106,7 +106,6 @@ clickButton.forEach((button, index) => {
         // Stop the raining effect after a certain duration
         setTimeout(() => {
           clearInterval(rainingInterval); // Clear the interval
-          document.body.classList.remove('raining-coins'); // Remove raining-coins class
         }, 5000);
       }
 
