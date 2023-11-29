@@ -35,7 +35,7 @@ upgrade.forEach((button, index) => {
         money -= incomeMultiplierCost;
         incomeMultiplierCost *= 2;
         incomeMultiplierLevel++;
-        incomeMultiplier *= 1.5;
+        incomeMultiplier *= 2;
         incomeMultiplierDisplay.textContent = incomeMultiplier;
         incomeMultiplierCostDisplay.textContent = incomeMultiplierCost;
         incomeMultiplierLevelDisplay.textContent = incomeMultiplierLevel;
@@ -47,7 +47,7 @@ upgrade.forEach((button, index) => {
         money -= incomeMultiplierCost2;
         incomeMultiplierCost2 *= 2;
         incomeMultiplierLevel2++;
-        incomeMultiplier2 *= 1.5;
+        incomeMultiplier2 *= 2;
         incomeMultiplierDisplay2.textContent = incomeMultiplier2;
         incomeMultiplierCostDisplay2.textContent = incomeMultiplierCost2;
         incomeMultiplierLevelDisplay2.textContent = incomeMultiplierLevel2;
@@ -64,11 +64,13 @@ unlockButton.addEventListener('click', () => {
     money -= 100;
     moneyDisplay.textContent = money;
     canUseSecondSet = true;
-    document.getElementById('item2').removeAttribute('disabled');
-    document.getElementById('upgrade2').removeAttribute('disabled');
+    document.getElementById('item2').disabled = false;
+    document.getElementById('upgrade2').disabled = false;
   }
 });
-
+if(money >= 1000000) {
+  alert("You win!");
+  }
 clickButton.forEach((button, index) => {
   button.addEventListener('click', () => {
     if(index === 0) {
