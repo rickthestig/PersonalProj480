@@ -34,7 +34,7 @@ upgrade.forEach((button, index) => {
         money -= incomeMultiplierCost;
         incomeMultiplierCost *= 2;
         incomeMultiplierLevel++;
-        incomeMultiplier *= 2;
+        incomeMultiplier *= 1.5;
         incomeMultiplierDisplay.textContent = incomeMultiplier;
         incomeMultiplierCostDisplay.textContent = incomeMultiplierCost;
         incomeMultiplierLevelDisplay.textContent = incomeMultiplierLevel;
@@ -46,7 +46,7 @@ upgrade.forEach((button, index) => {
         money -= incomeMultiplierCost2;
         incomeMultiplierCost2 *= 2;
         incomeMultiplierLevel2++;
-        incomeMultiplier2 *= 2;
+        incomeMultiplier2 *= 1.5;
         incomeMultiplierDisplay2.textContent = incomeMultiplier2;
         incomeMultiplierCostDisplay2.textContent = incomeMultiplierCost2;
         incomeMultiplierLevelDisplay2.textContent = incomeMultiplierLevel2;
